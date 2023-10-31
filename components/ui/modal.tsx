@@ -5,6 +5,7 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogTitle,
 } from './dialog';
 
 interface ModalProps {
@@ -33,12 +34,14 @@ export const Modal = ({
       open={isOpen}
       onOpenChange={onChange}>
       <DialogContent>
-        <DialogHeader>{title}</DialogHeader>
+        <DialogHeader>
+          <DialogTitle>{title}</DialogTitle>
 
-        <DialogDescription>{description}</DialogDescription>
+          <DialogDescription>{description}</DialogDescription>
+        </DialogHeader>
+
+        <div>{children}</div>
       </DialogContent>
-
-      <div>{children}</div>
     </Dialog>
   );
 };
