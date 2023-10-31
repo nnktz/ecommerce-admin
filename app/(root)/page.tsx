@@ -1,11 +1,7 @@
-import { UserButton } from '@clerk/nextjs';
+'use client';
 
 const SetupPage = () => {
-  return (
-    <div className='p-4'>
-      <UserButton afterSignOutUrl='/' />
-    </div>
-  );
+  return <div className='p-4'>page</div>;
 };
 
 export default SetupPage;
