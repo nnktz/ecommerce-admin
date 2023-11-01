@@ -10,6 +10,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 
+import { useOrigin } from '@/hooks/use-origin';
+
 import { Heading } from '@/components/ui/heading';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -38,6 +40,7 @@ type SettingFormValues = z.infer<typeof formSchema>;
 export const SettingsForm = ({ initialData }: SettingsFormProps) => {
   const params = useParams();
   const router = useRouter();
+  const origin = useOrigin();
 
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
