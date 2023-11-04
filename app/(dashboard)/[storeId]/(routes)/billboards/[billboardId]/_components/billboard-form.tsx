@@ -10,8 +10,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 
-import { useOrigin } from '@/hooks/use-origin';
-
 import { Heading } from '@/components/ui/heading';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -41,7 +39,6 @@ interface BillboardFormProps {
 export const BillboardForm = ({ initialData }: BillboardFormProps) => {
   const params = useParams();
   const router = useRouter();
-  const origin = useOrigin();
 
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -89,7 +86,7 @@ export const BillboardForm = ({ initialData }: BillboardFormProps) => {
         `/api/${params.storeId}/billboards/${params.billboardId}`
       );
       router.refresh();
-      router.push('/');
+      router.push(`/${params.storeId}/billboards`);
       toast.success('Billboard deleted successfully');
     } catch (error) {
       toast.error(

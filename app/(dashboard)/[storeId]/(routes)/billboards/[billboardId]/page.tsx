@@ -1,7 +1,7 @@
 import db from '@/lib/db';
 import { BillboardForm } from './_components/billboard-form';
 
-const BillboardPage = async ({
+const BillboardIdPage = async ({
   params,
 }: {
   params: { billboardId: string };
@@ -21,4 +21,4 @@ const BillboardPage = async ({
   );
 };
 
-export default BillboardPage;
+export default BillboardIdPage;
