@@ -1,9 +1,9 @@
 import { format } from 'date-fns';
 
 import db from '@/lib/db';
+import { formatter } from '@/lib/utils';
 import { ProductClient } from './_components/client';
 import { ProductColumn } from './_components/columns';
-import { formatter } from '@/lib/utils';
 
 const ProductsPage = async ({ params }: { params: { storeId: string } }) => {
   const products = await db.product.findMany({
